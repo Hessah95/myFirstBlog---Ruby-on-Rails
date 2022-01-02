@@ -25,6 +25,22 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # action to get a form for updating an article
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  # action to update an article
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render :edit, status: :unporocessable_entity
+    end
+  end
+
 
   private
   def article_params
