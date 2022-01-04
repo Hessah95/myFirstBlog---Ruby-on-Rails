@@ -1,6 +1,12 @@
 class ArticlesController < ApplicationController
+  # all users allowed to access index & show
+  # ONLY authenticated users allowed to access the rest routes
+  before_action :authenticate_user!, :except => [:index, :show]
+  # :authenticate_user! is a method provided by Devise
 
-  # http_basic_authenticate_with name: "Hessah", password: "Hessah", except: [:index, :show]
+  
+  # The simplest way for authentication:
+  # http_basic_authenticate_with name: "name", password: "pass", except: [:index, :show]
 
   # action for the list page
   def index
@@ -14,11 +20,7 @@ class ArticlesController < ApplicationController
 
   # action to get a form for new article
   def new
-    if user_signed_in?
       @article = Article.new
-    else
-      redirect_to root_path, alert: "You must be signed in to add a new article!"
-    end
   end
 
   # action to create a new article
