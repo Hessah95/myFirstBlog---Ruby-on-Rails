@@ -14,7 +14,11 @@ class ArticlesController < ApplicationController
 
   # action to get a form for new article
   def new
-    @article = Article.new
+    if user_signed_in?
+      @article = Article.new
+    else
+      redirect_to root_path, alert: "You must be signed in to add a new article!"
+    end
   end
 
   # action to create a new article
