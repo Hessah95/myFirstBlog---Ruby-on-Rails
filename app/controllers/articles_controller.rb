@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
   # :authenticate_user! is a method provided by Devise
 
+  # before_action :set_user
+
   
   # The simplest way for authentication:
   # http_basic_authenticate_with name: "name", password: "pass", except: [:index, :show]
@@ -25,9 +27,10 @@ class ArticlesController < ApplicationController
 
   # action to create a new article
   def create
-    @article = Article.new(article_params)
+    @article = Article.new(article_params.merge(user_id: current_user.id))
 
-    if @article.save
+    if @article.save!
+      flash[:success] = "Article created"
       redirect_to @article
     else
       render :new, status: :unporocessable_entity
@@ -43,7 +46,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
 
-    if @article.update(article_params)
+    if @article.update(article_params.merge(user_id: current_user.id))
       redirect_to @article
     else
       render :edit, status: :unporocessable_entity
@@ -60,7 +63,12 @@ class ArticlesController < ApplicationController
 
 
   private
+  
+  # def set_user
+  #   @user = User.find(params[:id])
+  # end
+
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :user_id)
   end
 end
