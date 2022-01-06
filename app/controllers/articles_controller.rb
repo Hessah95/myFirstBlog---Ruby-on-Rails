@@ -4,7 +4,8 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
   # :authenticate_user! is a method provided by Devise
 
-  # before_action :set_user
+  # To set authority for updating & deleting articles
+  before_action :set_private_auth, only: [:edit, :update, :destroy]
 
   
   # The simplest way for authentication:
@@ -64,9 +65,12 @@ class ArticlesController < ApplicationController
 
   private
   
-  # def set_user
-  #   @user = User.find(params[:id])
-  # end
+  def set_private_auth
+    @article = Article.find(params[:id])
+    if @article.user_id != current_user.id
+      redirect_back_or_to '/', notice: 'Sorry, you are not authorized!'
+    end
+  end
 
   def article_params
     params.require(:article).permit(:title, :body, :user_id)

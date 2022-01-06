@@ -4,9 +4,12 @@
 
 <h6>Auther: <%= @article.user_id %></h6>
 
-<%if @article.user_id == current_user.id %>
+<%if current_user && @article.user_id == current_user.id %>
 <ul>
 <li><%= link_to "Edit", edit_article_path(@article) %></li>
-<li><%= button_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %></li>
+<li><%= button_to "Delete", article_path(@article), method: :delete %></li>
 </ul>
 <% end %>
+
+
+<%= link_to "Back", :back %>
