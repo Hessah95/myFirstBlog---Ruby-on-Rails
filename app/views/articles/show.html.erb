@@ -2,7 +2,7 @@
 
 <p><%= @article.body %></p>
 
-<h6>Auther: <%= @article.user_id %></h6>
+<h6>Auther: <%= @user.email %></h6>
 
 <%if current_user && @article.user_id == current_user.id %>
 <ul>

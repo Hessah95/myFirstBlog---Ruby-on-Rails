@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
   # action for the details page
   def show
     @article = Article.find(params[:id])
+    @user = User.find(@article.user_id)
   end
 
   # action to get a form for new article
@@ -31,9 +32,10 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params.merge(user_id: current_user.id))
 
     if @article.save!
-      flash[:success] = "Article created"
+      flash[:notice] = "Article created"
       redirect_to @article
     else
+      flash[:alert] = 'Failed to create article!'
       render :new, status: :unporocessable_entity
     end
   end
@@ -48,8 +50,10 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update(article_params.merge(user_id: current_user.id))
+      flash[:notice] = "Article updated"
       redirect_to @article
     else
+      flash[:alert] = 'Failed to update article!'
       render :edit, status: :unporocessable_entity
     end
   end
