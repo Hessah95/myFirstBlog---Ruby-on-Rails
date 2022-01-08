@@ -1,0 +1,54 @@
+.article-title {
+  text-transform: uppercase;
+  margin: 2rem 0 2rem 0;
+  text-align: center;
+  color: rgb(99, 98, 98);
+}
+
+.article-form {
+  width: 100%;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.article-form .article-form-field {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.article-form-field .article-form-label {
+  margin-right: 1rem;
+}
+
+.article-form-field .article-form-input {
+  width: 60%;
+}
+
+.article-form .form-submit-btn {
+  margin-top: 2rem;
+  color: gray;
+  background-color: white;
+  border: 1px solid rgb(172, 170, 170);
+  border-radius: 5rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.article-form .form-submit-btn:hover {
+  color: white;
+  background-color: gray;
+  transition: 0.8s;
+}
+
+.edit-form-cancel {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  color: rgb(99, 98, 98);
+}
+
+.edit-form-cancel:hover {
+  color: black;
+}

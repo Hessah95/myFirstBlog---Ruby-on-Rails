@@ -16,8 +16,20 @@
 
     <%= render 'shared/navbar' %>
     
-    <p class='notice'><%= notice %></p>
-    <p class='alert'><%= alert %></p>
+    <% if notice || alert %>
+    <div class='container notice-alert'>
+
+    <% if notice %>
+     <p class='notice mx-auto'><%= notice %></p> 
+     <% end %>
+
+     <% if alert %>
+    <p class='alert mx-auto'><%= alert %></p>
+    <% end %>
+    
+    </div>
+    <% end %>
+
 
     <%= yield %>
 

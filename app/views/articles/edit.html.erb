@@ -1,5 +1,13 @@
-<h1>Edit An Article</h1>
+<div class='container' style="text-align: center">
 
+<h1 class='article-title'>Edit An Article</h1>
+
+<div class='article-form'>
 <%= render "form", article: @article %>
+</div>
 
-<%= link_to "Cancel", @article %>
+<div>
+<%= link_to "Cancel", @article, class: 'edit-form-cancel ' %>
+</div>
+
+</div>

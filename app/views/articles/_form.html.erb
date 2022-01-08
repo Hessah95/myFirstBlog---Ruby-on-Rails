@@ -1,30 +1,30 @@
 <%= form_with model: article do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+  <div class='article-form-field'>
+    <%= form.label :title , class: 'article-form-label'%>
+    <%= form.text_field :title, class: 'article-form-input' %>
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
+  <div class='article-form-field'>
+    <%= form.label :body , class: 'article-form-label'%>
+    <%= form.text_area :body, class: 'article-form-input', :rows => 10 %>
     <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
+  <div >
      <%= form.hidden_field :user_id, value: current_user.id %>
-    <p> as: <%= current_user.username %> </p>
+    <p> Author: <%= current_user.username %> </p>
 
     <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div >
+    <%= form.submit class: 'form-submit-btn' %>
   </div>
 <% end %>

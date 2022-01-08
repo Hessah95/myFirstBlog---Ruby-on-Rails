@@ -1,41 +1,11 @@
-.welcome-badge {
-  width: 100% !important;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 2rem !important;
+.notice-alert {
+  color: rgb(99, 98, 98);
+  text-align: center;
+  margin-top: 2rem;
 }
 
-.card {
-  margin: 0.5rem;
-  padding: 0.8rem;
-}
+/* -------- index ----------------- */
+@import url("./subSylesheets/index.css");
 
-.card-article-title {
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.card-article-body {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  line-height: 16px; /* fallback */
-  max-height: 32px; /* fallback */
-  -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
-}
-
-.card-read-link {
-  color: gray;
-  text-decoration: none;
-  float: right;
-  border: 1px solid gray;
-  border-radius: 5rem;
-  padding: 0.2rem 0.5rem;
-}
-
-.card-read-link:hover {
-  color: white;
-  background-color: gray;
-  transition: 0.8s;
-}
+/* -------- Article Forms --------- */
+@import url("./subSylesheets/articleForms.css");
