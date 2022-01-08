@@ -16,11 +16,8 @@
   </div>
 
   <div>
-    <%= form.label :user_id %><br>
-    <%= form.number_field :user_id, :value => current_user.id, disabled: true %>
-    <p> as: <%= current_user.email %> </p>
-
-   
+     <%= form.hidden_field :user_id, value: current_user.id %>
+    <p> as: <%= current_user.username %> </p>
 
     <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>

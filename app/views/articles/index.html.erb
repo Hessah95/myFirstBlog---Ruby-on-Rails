@@ -1,4 +1,4 @@
-<% name = current_user.present? ? current_user.email : 'New User' %>
+<% name = current_user.present? ? current_user.username : 'New User' %>
 <div class='mx-auto mb-5' style="width: 150px;">
 <span class="badge rounded-pill bg-info text-dark">Welcome, <%= name %></span>
 </div>
