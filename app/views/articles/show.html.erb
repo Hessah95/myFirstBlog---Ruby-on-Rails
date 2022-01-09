@@ -1,19 +1,19 @@
 <div class='container'>
 
-<h1><%= @article.title %></h1>
+<h1 class='show-article-title'><%= @article.title %></h1>
 
-<p><%= @article.body %></p>
+<p class='show-article-body'><%= @article.body %></p>
 
-<h6>Auther: <%= @user.username %></h6>
+<h6 class='show-article-author'><small>Auther:</small> <%= @user.username %></h6>
 
 <%if current_user && @article.user_id == current_user.id %>
-<ul>
-<li><%= link_to "Edit", edit_article_path(@article) %></li>
-<li><%= button_to "Delete", article_path(@article), method: :delete %></li>
-</ul>
+<div class='show-links-box' >
+<%= link_to "Edit", edit_article_path(@article) , class:'show-article-edit'%>
+<%= button_to "Delete", article_path(@article), method: :delete , class:'show-article-delete' %>
+</div>
 <% end %>
 
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back , class: 'show-back-link'%>
 
 </div>

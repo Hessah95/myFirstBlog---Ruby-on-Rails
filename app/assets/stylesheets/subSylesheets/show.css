@@ -1,0 +1,72 @@
+.show-article-title {
+  text-transform: uppercase;
+  margin: 3.5rem 0 2rem 0;
+  text-align: center;
+  color: rgb(99, 98, 98);
+}
+
+.show-article-body {
+  padding: 2rem;
+  text-align: justify;
+  text-justify: inter-character;
+  line-height: 32px;
+  font-size: 18px;
+  text-indent: 30px;
+}
+
+.show-article-author {
+  text-align: right;
+  margin: 2rem 3.5rem 2rem 0;
+  font-size: 1.2rem;
+  color: #636262;
+}
+
+.show-links-box {
+  text-align: right;
+  margin-right: 4rem;
+  margin-bottom: 3.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.show-article-edit {
+  color: #636262;
+  text-decoration: none;
+  border: 1px solid #636262;
+  border-radius: 5rem;
+  padding: 0.2rem 0.5rem;
+  text-transform: uppercase;
+}
+
+.show-article-edit:hover {
+  color: white;
+  background-color: #636262;
+  transition: 0.8s;
+}
+
+.show-article-delete {
+  margin-left: 1rem;
+  border: none;
+  background-color: white;
+  color: #636262;
+}
+
+.show-article-delete:hover {
+  color: red;
+  transition: 0.5s;
+}
+
+.show-back-link {
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 5.5rem;
+  margin-right: 4.5rem;
+  color: rgb(99, 98, 98);
+}
+
+.show-back-link:hover {
+  color: black;
+}

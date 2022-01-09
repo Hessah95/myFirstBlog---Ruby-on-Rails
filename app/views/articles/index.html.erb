@@ -1,9 +1,14 @@
-<% name = current_user.present? ? current_user.username : 'New User' %>
+<% name = current_user.present? ? current_user.username : nil %>
+<% if name %>
 <div class='container'>
 <div class='welcome-badge mb-5' style="width: 150px;">
 <span class="badge rounded-pill bg-light text-dark ">Welcome, <%= name %></span>
 </div>
 </div>
+<% else %>
+<div style="margin-top: 2rem"></div>
+<% end %>
+
 
 <div class='container'>
 

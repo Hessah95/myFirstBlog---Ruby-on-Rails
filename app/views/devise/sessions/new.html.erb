@@ -1,17 +1,23 @@
-<h2>Log in</h2>
 
+<div class='container'>
+<div class='auth-main'>
+
+<h2 class="auth-title">Log in</h2>
+
+
+<div class='auth-form'>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-
-
+<div class='card col-4 mx-auto' style="border: none">
+<div class='auth-form-content '>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label  :email , class: 'auth-form-label'%> <br/>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: 'auth-form-input'%>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :password, class: 'auth-form-label' %> <br/>
+    <%= f.password_field :password, autocomplete: "current-password" , class: 'auth-form-input' %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -21,9 +27,17 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  </div>
+  </div>
+
+
+  <div class="actions m-4">
+    <%= f.submit "Log in" , class: 'auth-form-submit'%>
   </div>
 <% end %>
+</div>
 
 <%= render "devise/shared/links" %>
+
+</div>
+</div>

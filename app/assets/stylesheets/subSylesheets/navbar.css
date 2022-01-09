@@ -1,0 +1,12 @@
+.navbar .navbar-brand {
+  color: #636262;
+  font-weight: 900;
+}
+
+.navbar .navbar-brand:hover {
+  color: #636262;
+}
+
+.navbar-brand img {
+  margin-right: 0.5rem;
+}

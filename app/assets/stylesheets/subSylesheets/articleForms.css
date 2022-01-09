@@ -1,4 +1,4 @@
-.article-title {
+.article-form-title {
   text-transform: uppercase;
   margin: 2rem 0 2rem 0;
   text-align: center;
@@ -20,6 +20,7 @@
 
 .article-form-field .article-form-label {
   margin-right: 1rem;
+  color: #636262;
 }
 
 .article-form-field .article-form-input {
