@@ -1,10 +1,16 @@
-<div class='container'>
+<div class='container show-main'>
+
+
+<div style="text-align: right" class="mt-4">
+<%= link_to "Back", :back , class: 'show-back-link'%>
+</div>
+
 
 <h1 class='show-article-title'><%= @article.title %></h1>
 
 <p class='show-article-body'><%= @article.body %></p>
 
-<h6 class='show-article-author'><small>Auther:</small> <%= @user.username %></h6>
+<p class='show-article-author'><small>written by:</small> <%= @user.username %></p>
 
 <%if current_user && @article.user_id == current_user.id %>
 <div class='show-links-box' >
@@ -13,7 +19,5 @@
 </div>
 <% end %>
 
-
-<%= link_to "Back", :back , class: 'show-back-link'%>
 
 </div>
