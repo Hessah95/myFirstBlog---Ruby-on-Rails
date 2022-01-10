@@ -1,24 +1,24 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# noteworte blog
 
 Things you may want to cover:
 
-* Ruby version
+- Ruby version: "2.7.5"
 
-* System dependencies
+- Rails version: "7.0.0"
 
-* Configuration
+- Bootstrap version: "5.1"
 
-* Database creation
+- Gems added: Devise gem for authentication
 
-* Database initialization
+- Database: PostgreSQL
 
-* How to run the test suite
+---
 
-* Services (job queues, cache servers, search engines, etc.)
+## About this project :
 
-* Deployment instructions
-
-* ...
+- User can view all articles in the main page
+- User can read each article with it's author
+- User can register / login
+- Authenticated user can create a new article
+- Authenticated user can edit his own articles
+- Authenticated user can delete his own article
