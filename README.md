@@ -22,3 +22,7 @@ Things you may want to cover:
 - Authenticated user can create a new article
 - Authenticated user can edit his own articles
 - Authenticated user can delete his own article
+
+---
+
+Visit the deployed version : https://notewrote.herokuapp.com/
